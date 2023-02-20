@@ -1,0 +1,13 @@
+network:
+  version: 2
+  renderer: NetworkManager
+  ethernets:
+    eth0: {}
+  vlans:
+    vlan200:
+      id: 200
+      link: eth0
+      dhcp4: nothanks
+      addresses:
+        - 10.1.1.1/24:
+            label: ip1

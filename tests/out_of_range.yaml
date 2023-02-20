@@ -1,0 +1,5 @@
+network:
+  version: 42
+  renderer: NetworkManager
+  ethernets:
+    eth0: {}

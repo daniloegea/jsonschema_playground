@@ -1,0 +1,29 @@
+network:
+  version: 2
+  renderer: NetworkManager
+  ethernets:
+    eth0:
+      renderer: networkd
+      dhcp4: true
+      link-local: []
+      match:
+        macaddress: a0:4b:cc:1d:ee:0a
+      addresses:
+        - 192.168.0.1/24
+        - 10.0.0.1/24:
+            label: aaaaaaaaaaaaaaa
+      nameservers:
+        search:
+          - home.com
+          - casa.com
+        addresses:
+          - 8.8.8.8
+          - 4.4.4.4
+      optional-addresses: [dhcp4, dhcp6]
+      routes:
+        - to: default
+          via: 10.0.0.1
+        - to: 192.168.0.0/24
+          via: 10.0.0.254
+          table: 100
+      weird-property: veryweird
